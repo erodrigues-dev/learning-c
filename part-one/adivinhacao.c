@@ -7,7 +7,7 @@ int main()
   printf("*******************************************\n");
 
   int numerosecreto = 42;
-  int chute;
+  int chute = 0;
   int pontos = 50;
 
   while (chute != numerosecreto)
