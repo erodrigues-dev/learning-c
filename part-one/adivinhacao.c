@@ -1,15 +1,39 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
   printf("*******************************************\n");
   printf("* Bem vindo ao nosso jogo de adivinihacao *\n");
   printf("*******************************************\n");
 
   int numerosecreto = 42;
   int chute;
+  int pontos = 50;
 
-  printf("\nqual é o seu chute? ");
-  scanf("%d", &chute);
+  while (chute != numerosecreto)
+  {
+    printf("\nqual é o seu chute? ");
+    scanf("%d", &chute);
 
-  printf("\nseu chute foi %d\n", chute);
+    if (chute == numerosecreto)
+    {
+      printf("vc acertou!! o numero secreto é %d\n", numerosecreto);
+      printf("vc fez %d pontos\n", pontos);
+    }
+    else
+    {
+      int diferenca = (chute - numerosecreto);
+      if(diferenca < 0) diferenca = diferenca * -1;
+      pontos = pontos - diferenca;
+
+      if(pontos <= 0){
+        printf("vc perdeu!\n");
+        break;
+      }
+
+      printf("vc errou! tente novamente\n");
+      if(chute > numerosecreto) printf("o numero secreto é menor que seu chute!\n");
+      else printf("o numero secreto é maior que seu chute!\n");
+    }
+  }
 }
