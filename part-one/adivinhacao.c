@@ -26,7 +26,7 @@ int main()
     }
     else
     {
-      int diferenca = abs(chute - numerosecreto);
+      int diferenca = abs(chute - numerosecreto) / 2;
       pontos = pontos - diferenca;
 
       if(pontos <= 0){
