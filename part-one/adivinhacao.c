@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -22,8 +23,7 @@ int main()
     }
     else
     {
-      int diferenca = (chute - numerosecreto);
-      if(diferenca < 0) diferenca = diferenca * -1;
+      int diferenca = abs(chute - numerosecreto);
       pontos = pontos - diferenca;
 
       if(pontos <= 0){
